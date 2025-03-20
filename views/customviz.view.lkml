@@ -12,6 +12,9 @@ view: customviz {
     UNION ALL
     SELECT
       'USA' AS Categoria, 500 AS Valor, 'Europa' AS  origem
+    UNION ALL
+    SELECT
+      'Chile' AS Categoria, 200 AS Valor, 'Europa' AS  origem
             ;;
   }
   dimension: Categoria {
