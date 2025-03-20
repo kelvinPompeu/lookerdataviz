@@ -17,7 +17,9 @@ looker.plugins.visualizations.add({
     }
   },
   create: function(element, config) {
-    element.innerHTML = '<div class="pictorial-chart-container" style="width: 100%; height: 100%;"></div>';
+    this.container = element.appendChild(document.createElement("div"));
+    this.container.classList.add('pictorial-chart-container');
+    console.log("create function called");
 
   },
   updateAsync: function(data, element, config, queryResponse, details, done) {
