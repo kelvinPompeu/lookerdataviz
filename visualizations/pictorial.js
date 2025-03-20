@@ -40,8 +40,8 @@ looker.plugins.visualizations.add({
 
     // Prepare Data for Highcharts
     const seriesData = data.map(d => ({ // Add index to the map function
-      category: d[categoriaField].value
-      origem: d[origemField].value
+      category: d[categoriaField].value,
+      origem: d[origemField].value,
       valor: d[ValorField].value
 
       const dataPoints = [];
