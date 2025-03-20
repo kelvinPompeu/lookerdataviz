@@ -127,7 +127,7 @@ looker.plugins.visualizations.add({
               return this.name;
           }
         },
-          align: 'left',
+          align: 'right',
           verticalAlign: 'top',
           layout: 'horizontal',
           x: 0,
@@ -153,7 +153,7 @@ looker.plugins.visualizations.add({
         }
       },
       series: seriesData.concat([{ // Add a dummy series for the legend
-          name: "PictorialLegend",
+          name: "= 100 pessoas",
           data: [],
           marker: {
               symbol: `url(${imageUrl})`,
