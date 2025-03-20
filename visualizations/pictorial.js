@@ -88,37 +88,6 @@ looker.plugins.visualizations.add({
           enabled: true // Hide x axis labels
         }
       },
-      yAxis: {
-        title: {
-          text: "Categories"
-        },
-        categories: "alguma coisa",   // Set category names
-        reversed: true, // Reverse categories to display in the correct order
-        labels: {
-          useHTML: true,
-          formatter: function() {
-            const index = this.axis.categories.indexOf(this.value);
-            if (index !== -1 && data[index]) {
-              return `<span style="float:left">${this.value}</span>
-                      <span style="float:right">(${data[index].customviz.origem.value})</span>
-                      <span style="float:right">(${data[index].customviz.Valor.value})</span>`;
-            } else {
-              return this.value;
-            }
-          },
-          style: {
-            width: '150px', // Adjust width as needed
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            textAlign: 'left'
-          }
-        },
-        min: 0,
-        max: data.length - 1,
-        tickInterval: 1,
-        gridLineWidth: 0  // Remove horizontal grid lines
-      },
       legend: {
         enabled: true, // Enable the legend
         useHTML: true,
