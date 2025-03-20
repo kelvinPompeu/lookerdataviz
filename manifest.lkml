@@ -6,6 +6,12 @@ visualization: {
   file: "visualizations/stock_visualization.js"
 }
 
+visualization: {
+  id: "man_pictorial"
+  label: "man pictorial on bar grap"
+  file: "visualizations/pictorial.js"
+}
+
 application: kitchen {
   label: "pompeu kitchen React/TypeScript extension"
   url: "https://localhost:8080/bundle.js"

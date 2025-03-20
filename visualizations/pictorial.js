@@ -1,10 +1,12 @@
 looker.plugins.visualizations.add({
+  id: "man_pictorial",
+  label: "man pictorial on bar grap",
   create: function(element, config) {
     this.container = element.appendChild(document.createElement("div"));
     this.container.classList.add('pictorial-chart-container');
     console.log("create function called");
   },
-  update: function(data, element, config, queryResponse) {
+  updateAsync: function(data, element, config, queryResponse) {
     console.log("update function called");
     console.log("data:", data);
     console.log("config:", config);
@@ -20,6 +22,7 @@ looker.plugins.visualizations.add({
     const seriesData = data.map((row, index) => { // Add index to the map function
       const category = row.Categoria;
       const value = row.Valor;
+      const origem = row.origem;
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
@@ -33,7 +36,9 @@ looker.plugins.visualizations.add({
             symbol: 'url(' + imageUrl + ')',
             width: iconSize,
             height: iconSize
-          }
+          },
+            category: category,
+            origem: origem // AQUI é onde "origem" é atribuí
         });
       }
       return {
@@ -73,7 +78,9 @@ looker.plugins.visualizations.add({
           formatter: function() {
             const index = this.axis.categories.indexOf(this.value);
             if (index !== -1 && data[index]) {
-              return `<span style="float:left">${this.value}</span><span style="float:right">(${data[index].Valor})</span>`;
+              return `<span style="float:left">${this.value}</span>
+              <span style="float:right">(${data[index].origem})</span>
+              <span style="float:right">(${data[index].Valor})</span>`;
             } else {
               return this.value;
             }
@@ -108,7 +115,16 @@ looker.plugins.visualizations.add({
           y: 40
       },
       tooltip: {
-        enabled: false
+        enabled: true,
+        useHTML: true,
+        formatter: function() {
+          return `
+            <div>
+              <b>Categoria:</b> ${this.point.category}<br>
+              <b>Origem:</b> ${this.point.origem}
+            </div>
+          `;
+        },
       },
       plotOptions: {
         scatter: {
