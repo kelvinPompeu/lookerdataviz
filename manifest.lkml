@@ -10,6 +10,7 @@ visualization: {
   id: "man_pictorial"
   label: "man pictorial on bar grap"
   file: "visualizations/pictorial.js"
+  dependencies: ["https://code.highcharts.com/highcharts.js"]
 }
 
 application: kitchen {

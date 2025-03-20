@@ -154,6 +154,7 @@ looker.plugins.visualizations.add({
         enabled: false
       }
     });
-        done();
+    done();
+
   }
 });
