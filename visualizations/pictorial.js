@@ -35,13 +35,13 @@ looker.plugins.visualizations.add({
     const iconsPerUnit = config.iconsPerUnit || 100;
 
     const categoriaField = queryResponse.fields.dimensions.find(f => f.name.includes('Categoria')).name;
-    const origempriceField = queryResponse.fields.dimensions.find(f => f.name.includes('origem')).name;
+    const origemField = queryResponse.fields.dimensions.find(f => f.name.includes('origem')).name;
     const ValorField = queryResponse.fields.dimensions.find(f => f.name.includes('Valor')).name;
 
     // Prepare Data for Highcharts
     const seriesData = data.map(d => ({ // Add index to the map function
       category: d[categoriaField].value
-      origem: d[origempriceField].value
+      origem: d[origemField].value
       valor: d[ValorField].value
 
       const dataPoints = [];
