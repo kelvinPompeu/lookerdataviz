@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
         formatter: function() {
           return `
             <div>
-              <b>Categoria:</b> ${this.point.Categoria}<br>
+              <b>Categoria:</b> ${this.point.category}<br>
               <b>Origem:</b> ${this.point.origem}
             </div>
           `;
