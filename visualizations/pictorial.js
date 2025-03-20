@@ -77,7 +77,7 @@ looker.plugins.visualizations.add({
       },
       xAxis: {
         title: {
-          text: "Values"
+          text: "Valores"
         },
         min: 1,        // Adjust xAxis min to 1
         tickInterval: 2, // Further reduce the tick interval
@@ -88,7 +88,7 @@ looker.plugins.visualizations.add({
       },
       yAxis: {
         title: {
-          text: "Categories"
+          text: "Categoria"
         },
         categories: data.map(row => row[CategoriaField].value),  // Set category names
         reversed: true, // Reverse categories to display in the correct order
@@ -128,7 +128,7 @@ looker.plugins.visualizations.add({
           }
         },
           align: 'left',
-          verticalAlign: 'bottom',
+          verticalAlign: 'top',
           layout: 'horizontal',
           x: 0,
           y: 40
@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
         formatter: function() {
           return `
             <div>
-              <b>Categoria:</b> ${this.point.category}<br>
+              <b>Categoria:</b> ${this.point.Categoria}<br>
               <b>Origem:</b> ${this.point.origem}
             </div>
           `;
