@@ -41,6 +41,7 @@ explore: examplodemapadeshopping {}
 
 explore: itapevi {}
 
+explore: stocks {}
 
 map_layer: uf {
   file: "/uf.json"

@@ -1,9 +1,9 @@
 project_name: "tre-to"
 
 visualization: {
-  id: "stockvisualizationcard"
-  label: "Stock visualization card with format selection"
-  file: "visualizations/stock_visualization_card.js"
+  id: "stock_sector_heatmap"
+  label: "Stock Sector Heatmap"
+  file: "visualizations/stock_visualization.js"
 }
 
 application: kitchen {
