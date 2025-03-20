@@ -92,7 +92,7 @@ looker.plugins.visualizations.add({
         title: {
           text: "Categories"
         },
-        categories: data.map(row => row.customviz.Categoria.value),   // Set category names
+        categories: "alguma coisa",   // Set category names
         reversed: true, // Reverse categories to display in the correct order
         labels: {
           useHTML: true,
