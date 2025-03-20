@@ -1,6 +1,6 @@
 looker.plugins.visualizations.add({
   id: "man_pictorial",
-  label: "man pictorial on bar grap",
+  label: "man pictorial",
   options: {
     min_font_size: {
       type: "number",

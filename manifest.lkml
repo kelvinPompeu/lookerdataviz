@@ -8,7 +8,7 @@ visualization: {
 
 visualization: {
   id: "man_pictorial"
-  label: "man pictorial on bar grap"
+  label: "man pictorial"
   file: "visualizations/pictorial.js"
   dependencies: ["https://code.highcharts.com/highcharts.js"]
 }
