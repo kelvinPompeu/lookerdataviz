@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
         title: {
           text: "Categories"
         },
-        categories: data.map(row => row.Categoria),  // Set category names
+        categories: data.map(row => row.customviz.Categoria.value),   // Set category names
         reversed: true, // Reverse categories to display in the correct order
         labels: {
           useHTML: true,
@@ -94,8 +94,8 @@ looker.plugins.visualizations.add({
             const index = this.axis.categories.indexOf(this.value);
             if (index !== -1 && data[index]) {
               return `<span style="float:left">${this.value}</span>
-              <span style="float:right">(${data[index].origem})</span>
-              <span style="float:right">(${data[index].Valor})</span>`;
+                      <span style="float:right">(${data[index].customviz.origem.value})</span>
+                      <span style="float:right">(${data[index].customviz.Valor.value})</span>`;
             } else {
               return this.value;
             }
