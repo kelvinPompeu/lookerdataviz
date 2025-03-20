@@ -1,18 +1,6 @@
 project_name: "tre-to"
 
 visualization: {
-  id: "kelvin_Viz"
-  label: "kelvin_Viz"
-  file: "visualizations/my_local.js"
-  dependencies: [
-    "https://code.jquery.com/jquery-2.2.4.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js",
-    "https://code.highcharts.com/highcharts.js"
-  ]
-}
-
-visualization: {
   id: "stockvisualizationcard"
   label: "Stock visualization card with format selection"
   file: "visualizations/stock_visualization_card.js"
