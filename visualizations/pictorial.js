@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
             width: iconSize,
             height: iconSize
           },
-            category: category,
+            cat: category,
             origem: origem
         });
       }
@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
         formatter: function() {
           return `
             <div>
-              <b>Categoria:</b> ${this.point.category}<br>
+              <b>Categoria:</b> ${this.point.cat}<br>
               <b>Origem:</b> ${this.point.origem}
             </div>
           `;
