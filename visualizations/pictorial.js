@@ -37,9 +37,16 @@ looker.plugins.visualizations.add({
     // Prepare Data for Highcharts
     const seriesData = data.map((row, index) => { // Add index to the map function
       console.log(`Processing row at index ${index}:`, row); // Log adicional
-      const category = row.customviz.Categoria;
-      const value = row.customviz.Valor;
-      const origem = row.customviz.origem;
+
+       if (!row.customviz) {
+        console.log(`row.customviz is undefined at index ${index}`);
+      } else {
+        console.log(`row.customviz exists at index ${index}`);
+      }
+
+      const category = row.customviz && row.customviz.Categoria ? row.customviz.Categoria.value : "Categoria Desconhecida";
+      const value = row.customviz && row.customviz.Valor ? row.customviz.Valor.value : 0;
+      const origem = row.customviz && row.customviz.origem ? row.customviz.origem.value : "Origem Desconhecida";
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
