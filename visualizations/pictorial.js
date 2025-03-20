@@ -34,17 +34,15 @@ looker.plugins.visualizations.add({
     const iconSize = config.iconSize || 25;
     const iconsPerUnit = config.iconsPerUnit || 100;
 
-    // Prepare Data for Highcharts
-    const seriesData = data.map((row, index) => { // Add index to the map function
-       if (!row.customviz) {
-        console.log(`row.customviz is undefined at index ${index}`);
-      } else {
-        console.log(`row.customviz exists at index ${index}`);
-      }
+    const categoriaField = queryResponse.fields.dimensions.find(f => f.name.includes('Categoria')).name;
+    const origempriceField = queryResponse.fields.dimensions.find(f => f.name.includes('origem')).name;
+    const ValorField = queryResponse.fields.dimensions.find(f => f.name.includes('Valor')).name;
 
-      const category = row.customviz && row.customviz.Categoria ? row.customviz.Categoria.value : "Categoria Desconhecida";
-      const value = row.customviz && row.customviz.Valor ? row.customviz.Valor.value : 0;
-      const origem = row.customviz && row.customviz.origem ? row.customviz.origem.value : "Origem Desconhecida";
+    // Prepare Data for Highcharts
+    const seriesData = data.map(d => ({ // Add index to the map function
+      category: d[categoriaField].value,
+      origem: d[origempriceField].value,
+      valor: d[ValorField].value,
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
