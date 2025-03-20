@@ -40,9 +40,6 @@ looker.plugins.visualizations.add({
 
     // Prepare Data for Highcharts
     const seriesData = data.map(d => ({ // Add index to the map function
-      category: d[categoriaField].value,
-      origem: d[origemField].value,
-      valor: d[ValorField].value
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
@@ -51,14 +48,14 @@ looker.plugins.visualizations.add({
         dataPoints.push({
           x: i + 1,  // Start from 1 instead of 0
           y: index,
-          seriesName: category,
+          seriesName:  d[categoriaField].value,
           marker: {
             symbol: 'url(' + imageUrl + ')',
             width: iconSize,
             height: iconSize
           },
-            category: category,
-            origem: origem
+            category:  d[categoriaField].value,
+            origem: d[origemField].value
         });
       }
       return {
