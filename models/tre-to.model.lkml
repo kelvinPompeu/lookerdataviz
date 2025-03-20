@@ -26,43 +26,32 @@ datagroup: tre_to_default_datagroup {
 
 explore: candidatos_do_tocantin {}
 
-explore: shape_file_cdhu {
-  join: codigo_municipio {
-    sql_on: ${shape_file_cdhu.municipio} = ${codigo_municipio.nome_do_municipio} ;;
-    relationship: many_to_one
-    }
-}
-
-explore: noticias {}
-
-explore: aluno {}
-
 explore: examplodemapadeshopping {}
 
-explore: itapevi {}
+explore: MapaShopping {}
 
 explore: stocks {}
 
 map_layer: uf {
-  file: "/uf.json"
+  file: "/maps/uf.json"
 }
 
 map_layer: municipio {
-  file: "/municipio.json"
+  file: "/maps/municipio.json"
 }
 
 map_layer: Sp {
-  url: "/geojs-35-mun.json"
+  url: "/mapsgeojs-35-mun.json"
   feature_key: "id"
 }
 
 map_layer: pac {
-  file: "/pac.json"
+  file: "/maps/pac.json"
   property_key: "Name"
   format: topojson
 }
 
-map_layer: shoppingfake_itapevi {
-  file: "/itapevi.json"
+map_layer: shopping_layout {
+  file: "/maps/shopping_layout.json"
   property_key: "Nome"
   }

@@ -73,10 +73,5 @@ view: codigo_municipio {
     type: count
   }
 
-  dimension: name {
-    type: string
-    sql: "1FBack黒_202304";;
-    map_layer_name: pac
-  }
 
 }

@@ -1,4 +1,4 @@
-view: itapevi {
+view: MapaShopping{
   derived_table: {
     sql:
               SELECT
@@ -41,10 +41,10 @@ view: itapevi {
     default_value: "sales"
   }
 
-  dimension: name_mapa {
+  dimension: name_maps {
     type: string
     sql: ${TABLE}.Nome ;;
-    map_layer_name: shoppingfake_itapevi
+    map_layer_name: shopping_layout
     label: "nome_maps"
     html:
       <div style="margin:1em 6em 1em 1em;">
@@ -56,7 +56,7 @@ view: itapevi {
               Andar: {{floor._value}} <br>
               Número de Clientes: {{nb_of_customer._value}} <br>
               Vendas: {{total_sales._value}} <br>
-              <a href="/explore/tre-to/itapevi?fields=itapevi.name,itapevi.floor,itapevi.total_sales,itapevi.total_rent&f[itapevi.name]={{value}}">Historico</a>
+              <a href="/explore/tre-to/MapaShopping?fields=MapaShopping.name,MapaShopping.floor,MapaShopping.total_sales,MapaShopping.total_rent&f[MapaShopping.name]={{value}}">Historico</a>
           </div>
       </div>
     ;;
@@ -110,9 +110,9 @@ view: itapevi {
     }
   }
 
-  dimension: Historico {
+  dimension: History {
     sql: ${TABLE}.Nome ;;
-    html: <a href="/explore/tre-to/itapevi?fields=itapevi.name,itapevi.floor,itapevi.total_sales,itapevi.total_rent&f[itapevi.name]={{value}}">Historico</a>;;
+    html: <a href="/explore/tre-to/MapaShopping?fields=MapaShopping.name,MapaShopping.floor,MapaShopping.total_sales,MapaShopping.total_rent&f[MapaShopping.name]={{value}}">Historico</a>;;
     }
 
 
