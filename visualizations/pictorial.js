@@ -34,12 +34,15 @@ looker.plugins.visualizations.add({
     const iconSize = config.iconSize || 25;
     const iconsPerUnit = config.iconsPerUnit || 100;
 
-    const categoriaField = queryResponse.fields.dimensions.find(f => f.name.includes('Categoria')).name;
+    const CategoriaField = queryResponse.fields.dimensions.find(f => f.name.includes('Categoria')).name;
     const origemField = queryResponse.fields.dimensions.find(f => f.name.includes('origem')).name;
     const ValorField = queryResponse.fields.dimensions.find(f => f.name.includes('Valor')).name;
 
     // Prepare Data for Highcharts
-    const seriesData = data.map(d => ({ // Add index to the map function
+    const seriesData = data.map((row, index) => {
+      const category = row[CategoriaField].value;
+      const value = row[ValorField].value;
+      const origem = row[origemField].value;
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
@@ -48,14 +51,14 @@ looker.plugins.visualizations.add({
         dataPoints.push({
           x: i + 1,  // Start from 1 instead of 0
           y: index,
-          seriesName:  d[categoriaField].value,
+          seriesName: category,
           marker: {
             symbol: 'url(' + imageUrl + ')',
             width: iconSize,
             height: iconSize
           },
-            category:  d[categoriaField].value,
-            origem: d[origemField].value
+            category: category,
+            origem: origem
         });
       }
       return {
