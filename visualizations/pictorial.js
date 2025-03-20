@@ -36,9 +36,9 @@ looker.plugins.visualizations.add({
 
     // Prepare Data for Highcharts
     const seriesData = data.map((row, index) => { // Add index to the map function
-      const category = row.Categoria;
-      const value = row.Valor;
-      const origem = row.origem;
+      const category = row.customviz.Categoria;
+      const value = row.customviz.Valor;
+      const origem = row.customviz.origem;
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
