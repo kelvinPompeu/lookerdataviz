@@ -42,7 +42,9 @@ looker.plugins.visualizations.add({
     const seriesData = data.map(d => ({ // Add index to the map function
       category: d[categoriaField].value,
       origem: d[origempriceField].value,
-      valor: d[ValorField].value,
+      valor: d[ValorField].value
+    }));
+
 
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
