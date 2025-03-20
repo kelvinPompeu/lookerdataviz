@@ -15,8 +15,8 @@ looker.plugins.visualizations.add({
     console.log("create function called");
   },
   updateAsync: function(data, element, config, queryResponse, done) {
-    console.log("update function called");
-    console.log("data:", data);
+    console.error("update function called");
+    console.error("data:", data);
     console.log("config:", config);
     console.log("queryResponse:", queryResponse);
     console.log("Config object:", config);
