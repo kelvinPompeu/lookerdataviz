@@ -36,6 +36,7 @@ looker.plugins.visualizations.add({
 
     // Prepare Data for Highcharts
     const seriesData = data.map((row, index) => { // Add index to the map function
+      console.log(`Processing row at index ${index}:`, row); // Log adicional
       const category = row.customviz.Categoria;
       const value = row.customviz.Valor;
       const origem = row.customviz.origem;
