@@ -45,7 +45,6 @@ looker.plugins.visualizations.add({
       valor: d[ValorField].value
     }));
 
-
       const dataPoints = [];
       const iconCount = Math.floor(value / iconsPerUnit);
 
