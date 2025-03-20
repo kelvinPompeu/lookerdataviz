@@ -17,7 +17,8 @@ looker.plugins.visualizations.add({
     }
   },
   create: function(element, config) {
-    element.innerHTML = '<div id="stock-heatmap" style="width: 100%; height: 100%;"></div>';
+    element.innerHTML = '<div class="pictorial-chart-container" style="width: 100%; height: 100%;"></div>';
+
   },
   updateAsync: function(data, element, config, queryResponse, details, done) {
     console.log("update function called");
@@ -51,7 +52,7 @@ looker.plugins.visualizations.add({
             height: iconSize
           },
             category: category,
-            origem: origem // AQUI é onde "origem" é atribuí
+            origem: origem
         });
       }
       return {
@@ -60,7 +61,6 @@ looker.plugins.visualizations.add({
       };
     });
 
-    // Render Highcharts
     Highcharts.chart(this.container, {
       chart: {
         type: 'scatter',
