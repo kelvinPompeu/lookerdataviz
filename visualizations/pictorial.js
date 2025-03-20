@@ -7,21 +7,20 @@ looker.plugins.visualizations.add({
       label: "Minimum Font Size",
       default: 8,
       section: "Style"
+    },
+    color_positive_high: {
+      type: "string",
+      label: "Color for High Positive Change",
+      default: "#005a32",
+      section: "Colors",
+      display: "color"
     }
   },
   create: function(element, config) {
-    this.container = element.appendChild(document.createElement("div"));
-    this.container.classList.add('pictorial-chart-container');
-    console.log("create function called");
+    element.innerHTML = '<div id="stock-heatmap" style="width: 100%; height: 100%;"></div>';
   },
-  updateAsync: function(data, element, config, queryResponse, done) {
-    console.error("update function called");
-    console.error("data:", data);
-    console.error("config:", config);
-    console.error("queryResponse:", queryResponse);
-    console.error("Configobject:", config);
-
+  updateAsync: function(data, element, config, queryResponse, details, done) {
+    this.clearErrors();
     done();
-
   }
 });
