@@ -95,7 +95,7 @@ looker.plugins.visualizations.add({
         labels: {
           useHTML: true,
           formatter: function() {
-        const index = this.axis.categories.indexOf(this.value);
+            const index = this.axis.categories.indexOf(this.value);
             if (index !== -1 && data[index]) {
              return `<span style="float:left">${this.value}</span>
                      <span style="float:right">(${data[index][origemField].value})</span>

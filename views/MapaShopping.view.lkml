@@ -2,25 +2,25 @@ view: MapaShopping{
   derived_table: {
     sql:
               SELECT
-                'Caedu' AS Nome, '103' AS store_id, 1 AS floor, 106767 AS sales, NULL AS store_image, 53290 AS rent, 274 AS nb_of_customer, 20230701 AS date
+                'Caedu' AS Nome, '103' AS store_id, 1 AS floor, 106767 AS sales, NULL AS store_image, 53290 AS rent, 274 AS nb_of_customer, 20230701 AS date, 'Very unsatisfied' as score
               UNION ALL
               SELECT
-                'Bradesco' AS Nome, '102-2' AS store_id, 1 AS floor, 370486 AS sales, NULL AS store_image, 17122 AS rent, 1341 AS nb_of_customer, 20230701 AS date
+                'Bradesco' AS Nome, '102-2' AS store_id, 1 AS floor, 370486 AS sales, NULL AS store_image, 17122 AS rent, 1341 AS nb_of_customer, 20230701 AS date, 'Unsatisfied' as score
               UNION ALL
               SELECT
-                'Drogaria São Paulo' AS Nome, '102' AS store_id, 1 AS floor, 441232 AS sales, NULL AS store_image, 69020 AS rent, 22 AS nb_of_customer, 20230701 AS date
+                'Drogaria São Paulo' AS Nome, '102' AS store_id, 1 AS floor, 441232 AS sales, NULL AS store_image, 69020 AS rent, 22 AS nb_of_customer, 20230701 AS date, 'Neutral' as score
               UNION ALL
               SELECT
-                'Magazine Luiza' AS Nome, '101' AS store_id, 1 AS floor, 962930 AS sales, NULL AS store_image, 66376 AS rent, 627 AS nb_of_customer, 20230701 AS date
+                'Magazine Luiza' AS Nome, '101' AS store_id, 1 AS floor, 962930 AS sales, NULL AS store_image, 66376 AS rent, 627 AS nb_of_customer, 20230701 AS date, 'Satisfied' as score
               UNION ALL
               SELECT
-                'Casas Bahia' AS name, '113-1' AS store_id, 1 AS floor, 449047 AS sales, "Casas_Bahia.png" AS store_image, 4684 AS rent, 489 AS nb_of_customer, 20230801 AS date
+                'Casas Bahia' AS name, '113-1' AS store_id, 1 AS floor, 449047 AS sales, "Casas_Bahia.png" AS store_image, 4684 AS rent, 489 AS nb_of_customer, 20230801 AS date, 'Very satisfied' as score
               UNION ALL
               SELECT
-                'Pão de açucar' AS name, 'S02' AS store_id, 1 AS floor, 29496 AS sales, NULL AS store_image, 32991 AS rent, 93 AS nb_of_customer, 20230802 AS date
+                'Pão de açucar' AS name, 'S02' AS store_id, 1 AS floor, 29496 AS sales, NULL AS store_image, 32991 AS rent, 93 AS nb_of_customer, 20230802 AS date, 'Satisfied' as score
               UNION ALL
               SELECT
-                'Habibs' AS name, 'S01' AS store_id, 1 AS floor, 61552 AS sales, NULL AS store_image, 64995 AS rent, 130 AS nb_of_customer, 20230802 AS date
+                'Habibs' AS name, 'S01' AS store_id, 1 AS floor, 61552 AS sales, NULL AS store_image, 64995 AS rent, 130 AS nb_of_customer, 20230802 AS date, 'Unsatisfied' as score
                 ;;
   }
 
@@ -40,6 +40,28 @@ view: MapaShopping{
     }
     default_value: "sales"
   }
+
+  dimension: score {
+    group_label: "Rating"
+    label: "Customer Satisfaction Rating"
+    type: string
+    sql: ${TABLE}.score;;
+    html:
+    {% if value == 'Very unsatisfied' %}
+    <div style="background: #FBB555; border-radius: 2px; color: #fff; display: inline-block; font-size: 11px; font-weight: bold; line-height: 1; padding: 3px 4px; width: 100%; text-align: center;">{{ rendered_value }}</div>
+    {% elsif value == 'Unsatisfied' %}
+        <div style="background: #FBB555; border-radius: 2px; color: #fff; display: inline-block; font-size: 11px; font-weight: bold; line-height: 1; padding: 3px 4px; width: 100%; text-align: center;">{{ rendered_value }}</div>
+    {% elsif value == 'Neutral' %}
+    <div style="background: #c9daf2; border-radius: 2px; color: #fff; display: inline-block; font-size: 11px; font-weight: bold; line-height: 1; padding: 3px 4px; width: 100%; text-align: center;">{{ rendered_value }}</div>
+    {% elsif value == 'Satisfied' %}
+    <div style="background: #8BC34A; border-radius: 2px; color: #fff; display: inline-block; font-size: 11px; font-weight: bold; line-height: 1; padding: 3px 4px; width: 100%; text-align: center;">{{ rendered_value }}</div>
+    {% elsif value == 'Very satisfied' %}
+    <div style="background:  #8BC34A; border-radius: 2px; color: #fff; display: inline-block; font-size: 11px; font-weight: bold; line-height: 1; padding: 3px 4px; width: 100%; text-align: center;">{{ rendered_value }}</div>
+    {% endif %} ;;
+  }
+
+
+
 
   dimension: name_maps {
     type: string
@@ -114,8 +136,6 @@ view: MapaShopping{
     sql: ${TABLE}.Nome ;;
     html: <a href="/explore/tre-to/MapaShopping?fields=MapaShopping.name,MapaShopping.floor,MapaShopping.total_sales,MapaShopping.total_rent&f[MapaShopping.name]={{value}}">Historico</a>;;
     }
-
-
 
   dimension: store_image {
     type: string
