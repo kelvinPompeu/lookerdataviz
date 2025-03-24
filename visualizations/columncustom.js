@@ -86,21 +86,26 @@ looker.plugins.visualizations.add({
         headerFormat: '<span style="font-size: 15px">{point.name}</span><br/>',
         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} medals</b><br/>'
       },
-  xAxis: {
-    type: 'category', accessibility: { description: 'Countries' },
-    labels: {
-      useHTML: true, animate: true,
-      format: function() {
-        if (this.axis && this.axis.categories && this.axis.categories[this.value] && this.chart.options.countries[this.axis.categories[this.value]]) { // Verificação de segurança
-        const countryName = this.axis.categories[this.value];
-        return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + this.chart.options.countries[countryName].ucCode + "-flag.gif'>";
-      } else {
-        return this.axis && this.axis.categories && this.axis.categories[this.value] ? this.axis.categories[this.value] : ''; // Verificação de segurança
-      }
-    },
-    style: { textAlign: 'center' }
-  }
-},
+      xAxis: {
+        type: 'category',
+        categories: data.map(row => row[paisField].value),  // Set category names
+        accessibility: {
+          description: 'Countries'
+          },
+        labels: {
+          useHTML: true,
+          animate: true,
+          formatter: function() {
+            const index = this.axis.categories.indexOf(this.value);
+            if (index !== -1 && data[index]) {
+              return `<<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_${this.value}flag.gif'>`;
+            } else {
+              return this.value;
+            }
+          },
+          style: { textAlign: 'center' }
+        }
+      },
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
         color: 'rgba(158, 159, 163, 0.5)', pointPlacement: -0.2, linkedTo: 'main',
