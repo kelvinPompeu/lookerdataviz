@@ -86,23 +86,22 @@ looker.plugins.visualizations.add({
         headerFormat: '<span style="font-size: 15px">{point.name}</span><br/>',
         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} medals</b><br/>'
       },
-        xAxis: {
-          type: 'category', accessibility: { description: 'Countries' },
-          labels: {
-            useHTML: true, animate: true,
-            format: function() {
-              const countryName = this.axis.categories[this.value];
-              console.log("Nome do país:", countryName); // Depuração
-              if (this.chart.options.countries[countryName]) {
-              console.log("ucCode:", this.chart.options.countries[countryName].ucCode); // Depuração
-              return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + this.chart.options.countries[countryName].ucCode + "-flag.gif'>";
-            } else {
-              return countryName; // Exibe o nome do país se o código não for encontrado
-            }
-          },
-          style: { textAlign: 'center' }
-        }
-      },
+  xAxis: {
+    type: 'category', accessibility: { description: 'Countries' },
+    labels: {
+      useHTML: true, animate: true,
+      format: function() {
+        console.log("this.value:", this.value);
+        console.log("this.axis.categories:", this.axis.categories);
+        const countryName = this.axis.categories[this.value];
+        if (this.chart.options.countries[countryName]) {
+        return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + this.chart.options.countries[countryName].ucCode + "-flag.gif'>";
+      } else {
+        return countryName;
+      }
+    },
+    style: { textAlign: 'center' }
+  },
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
         color: 'rgba(158, 159, 163, 0.5)', pointPlacement: -0.2, linkedTo: 'main',
