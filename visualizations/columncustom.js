@@ -47,6 +47,9 @@ looker.plugins.visualizations.add({
     };
 
     console.log("formatData", formatData);
+    console.log("formatData(data, anoAtual):", formatData(data, Math.max(...[...new Set(data.map(row => row[anoField].value))])));
+    console.log("formatData(data, anoAnterior, true):", formatData(data, Math.min(...[...new Set(data.map(row => row[anoField].value))].filter(ano => ano !== Math.max(...[...new Set(data.map(row => row[anoField].value))]))), true));
+
 
     // Obter os anos únicos dos dados
     const anos = [...new Set(data.map(row => row[anoField].value))];
