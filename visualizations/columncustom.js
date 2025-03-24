@@ -31,6 +31,11 @@ looker.plugins.visualizations.add({
 
     const paisField = queryResponse.fields.dimensions.find(f => f.name.includes('pais')).name;
     const anoField = queryResponse.fields.dimensions.find(f => f.name.includes('ano')).name;
+    const num_medalhasField = queryResponse.fields.measures.find(f => f.name.includes('num_medalhas')).name;
+
+    console.log("paisField", paisField);
+    console.log("anoField", anoField);
+    console.log("num_medalhasField", num_medalhasField);
 
     // Função para formatar os dados para Highcharts
     const formatData = (data, ano, isAnoAnterior = false) => {
@@ -40,6 +45,8 @@ looker.plugins.visualizations.add({
         color: isAnoAnterior ? 'rgba(158, 159, 163, 0.5)' : countries[row.pais].color
       }));
     };
+
+    console.log("formatData", formatData);
 
     // Obter os anos únicos dos dados
     const anos = [...new Set(data.map(row => row.ano))];
