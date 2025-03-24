@@ -90,7 +90,7 @@ looker.plugins.visualizations.add({
         type: 'category', accessibility: { description: 'Countries' },
         labels: {
           useHTML: true, animate: true,
-          format: "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_br-flag.gif'>",
+          format: "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_{chart.options.countries[value].ucCode}-flag.gif'>",
           style: { textAlign: 'center' }
         }
       },
