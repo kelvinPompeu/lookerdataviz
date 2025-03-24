@@ -86,14 +86,17 @@ looker.plugins.visualizations.add({
         headerFormat: '<span style="font-size: 15px">{point.name}</span><br/>',
         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y} medals</b><br/>'
       },
-      xAxis: {
-        type: 'category', accessibility: { description: 'Countries' },
-        labels: {
-          useHTML: true, animate: true,
-          format: "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_{chart.options.countries[value].ucCode}-flag.gif'>",
-          style: { textAlign: 'center' }
-        }
+  xAxis: {
+    type: 'category', accessibility: { description: 'Countries' },
+    labels: {
+      useHTML: true, animate: true,
+      format: function() {
+        const countryName = this.axis.categories[this.value];
+        return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + this.chart.options.countries[countryName].ucCode + "-flag.gif'>";
       },
+      style: { textAlign: 'center' }
+    }
+  },
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
         color: 'rgba(158, 159, 163, 0.5)', pointPlacement: -0.2, linkedTo: 'main',
