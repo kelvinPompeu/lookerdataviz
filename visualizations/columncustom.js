@@ -31,7 +31,6 @@ looker.plugins.visualizations.add({
 
     const paisField = queryResponse.fields.dimensions.find(f => f.name.includes('pais')).name;
     const anoField = queryResponse.fields.dimensions.find(f => f.name.includes('ano')).name;
-    const num_medalhasField = queryResponse.fields.dimensions.find(f => f.name.includes('num_medlahasField')).name;
 
     // Função para formatar os dados para Highcharts
     const formatData = (data, ano, isAnoAnterior = false) => {
