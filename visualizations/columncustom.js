@@ -88,23 +88,10 @@ looker.plugins.visualizations.add({
       },
       xAxis: {
         type: 'category',
-        categories: Array.from(new Set(data.map(row => row[paisField].value))), // Set unique category names
+        categories: countries, // Set unique category names
         accessibility: {
           description: 'Countries'
           },
-        labels: {
-          useHTML: true,
-          animate: true,
-          formatter: function() {
-            const index = this.axis.categories.indexOf(this.value);
-            if (index !== -1 && data[index]) {
-              return `<<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_${this.value}-flag.gif'>`;
-            } else {
-              return this.value;
-            }
-          },
-          style: { textAlign: 'center' }
-        }
       },
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
