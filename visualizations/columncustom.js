@@ -20,7 +20,7 @@ looker.plugins.visualizations.add({
       au: { name: 'Australia', color: '#2CAFFE' },
       de: { name: 'Germany', color: '#FE6A35' },
       br: { name: 'Brazil', color: '#6B8ABC' },
-      cn: { name: 'China', color: '#1C74BD' },
+      ch: { name: 'China', color: '#1C74BD' },
       gb: { name: 'Great Britain', color: '#00A6A6' },
       us: { name: 'United States', color: '#D568FB' }
     };
