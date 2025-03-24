@@ -15,11 +15,11 @@ looker.plugins.visualizations.add({
     console.log("Config object:", config);
 
     const countries = {
-      kr: { name: 'South Korea', color: '#FE2371' },
+      ca: { name: 'Canada', color: '#FE2371' },
       jp: { name: 'Japan', color: '#544FC5' },
       au: { name: 'Australia', color: '#2CAFFE' },
       de: { name: 'Germany', color: '#FE6A35' },
-      ru: { name: 'Russia', color: '#6B8ABC' },
+      br: { name: 'Brazil', color: '#6B8ABC' },
       cn: { name: 'China', color: '#1C74BD' },
       gb: { name: 'Great Britain', color: '#00A6A6' },
       us: { name: 'United States', color: '#D568FB' }

@@ -2,7 +2,7 @@ view: olimpiadas {
   derived_table: {
     sql:
     SELECT
-      "kr" AS pais, 2020 AS ano, 9 AS  num_medalhas
+      "ca" AS pais, 2020 AS ano, 9 AS  num_medalhas
     UNION ALL
     SELECT
       'jp' AS pais, 2020 AS ano, 12 AS  num_medalhas
@@ -14,7 +14,7 @@ view: olimpiadas {
       'de' AS pais, 2020 AS ano, 17 AS num_medalhas
     UNION ALL
     SELECT
-      'ru' AS pais, 2020 AS ano, 19 AS  num_medalhas
+      'br' AS pais, 2020 AS ano, 19 AS  num_medalhas
     UNION ALL
     SELECT
       "cn" AS pais, 2020 AS ano, 26 AS  num_medalhas
@@ -26,7 +26,7 @@ view: olimpiadas {
       'us' AS pais, 2020 AS ano, 46 AS  num_medalhas
     UNION ALL
     SELECT
-      "kr" AS pais, 2016 AS ano, 13 AS  num_medalhas
+      "ca" AS pais, 2016 AS ano, 13 AS  num_medalhas
     UNION ALL
     SELECT
       'jp' AS pais, 2016 AS ano, 7 AS  num_medalhas
@@ -38,7 +38,7 @@ view: olimpiadas {
       'de' AS pais, 2016 AS ano, 11 AS  num_medalhas
     UNION ALL
     SELECT
-      'ru' AS pais, 2016 AS ano, 20 AS  num_medalhas
+      'br' AS pais, 2016 AS ano, 20 AS  num_medalhas
     UNION ALL
     SELECT
       "cn" AS pais, 2016 AS ano, 38 AS  num_medalhas
