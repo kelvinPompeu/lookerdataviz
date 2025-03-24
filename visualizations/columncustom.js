@@ -95,7 +95,7 @@ looker.plugins.visualizations.add({
           useHTML: true,
           animate: true,
           format: "{chart.options.countries.(value).ucCode}<br>
-          <img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_{value}-flag.gif"
+          <img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_{value}-flag.gif'>"
           style: {
             textAlign: 'center'
           }
