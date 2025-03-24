@@ -91,17 +91,16 @@ looker.plugins.visualizations.add({
     labels: {
       useHTML: true, animate: true,
       format: function() {
-        console.log("this.value:", this.value);
-        console.log("this.axis.categories:", this.axis.categories);
+        if (this.axis && this.axis.categories && this.axis.categories[this.value] && this.chart.options.countries[this.axis.categories[this.value]]) { // Verificação de segurança
         const countryName = this.axis.categories[this.value];
-        if (this.chart.options.countries[countryName]) {
         return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + this.chart.options.countries[countryName].ucCode + "-flag.gif'>";
       } else {
-        return countryName;
+        return this.axis && this.axis.categories && this.axis.categories[this.value] ? this.axis.categories[this.value] : ''; // Verificação de segurança
       }
     },
     style: { textAlign: 'center' }
-  },
+  }
+},
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
         color: 'rgba(158, 159, 163, 0.5)', pointPlacement: -0.2, linkedTo: 'main',
