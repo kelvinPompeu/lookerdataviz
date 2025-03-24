@@ -87,12 +87,12 @@ looker.plugins.visualizations.add({
       yAxis: [{ title: { text: 'Gold medals' }, showFirstLabel: false }],
       series: [{
         color: 'rgba(158, 159, 163, 0.5)', pointPlacement: -0.2, linkedTo: 'main',
-        data: formatData(dataLooker, anoAnterior, true), // Cor cinza para o ano anterior
+        data: formatData(data, anoAnterior, true), // Cor cinza para o ano anterior
         name: anoAnterior.toString()
       }, {
         name: anoAtual.toString(), id: 'main', dataSorting: { enabled: true, matchByName: true },
         dataLabels: [{ enabled: true, inside: true, style: { fontSize: '16px' } }],
-        data: formatData(dataLooker, anoAtual)
+        data: formatData(data, anoAtual)
       }],
       exporting: { allowHTML: true }
     });
