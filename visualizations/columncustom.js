@@ -98,7 +98,7 @@ looker.plugins.visualizations.add({
           formatter: function() {
             const index = this.axis.categories.indexOf(this.value);
             if (index !== -1 && data[index]) {
-              return `<<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_${this.value}flag.gif'>`;
+              return `<<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_${this.value}-flag.gif'>`;
             } else {
               return this.value;
             }
