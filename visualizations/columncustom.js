@@ -96,7 +96,7 @@ looker.plugins.visualizations.add({
           animate: true,
           formatter: function () {
             const label = this.axis.defaultLabelFormatter.call(this);
-              return label + " kelvin";
+            return "<img style='display:inline-block;height:32px;' src='https://www.worldometers.info//img/flags/small/tn_" + label + "-flag.gif>",
             return label;
           },
           style: {
