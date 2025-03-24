@@ -17,7 +17,7 @@ view: olimpiadas {
       'br' AS pais, 2020 AS ano, 19 AS  num_medalhas
     UNION ALL
     SELECT
-      "ch" AS pais, 2020 AS ano, 26 AS  num_medalhas
+      "ch" AS pais, 2020 AS ano, 9 AS  num_medalhas
     UNION ALL
     SELECT
       'gb' AS pais, 2020 AS ano, 27 AS  num_medalhas
@@ -41,7 +41,7 @@ view: olimpiadas {
       'br' AS pais, 2016 AS ano, 20 AS  num_medalhas
     UNION ALL
     SELECT
-      "ch" AS pais, 2016 AS ano, 38 AS  num_medalhas
+      "ch" AS pais, 2016 AS ano, 26 AS  num_medalhas
     UNION ALL
     SELECT
       'gb' AS pais, 2016 AS ano, 29 AS  num_medalhas

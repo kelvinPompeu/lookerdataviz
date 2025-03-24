@@ -91,6 +91,7 @@ looker.plugins.visualizations.add({
         accessibility: {
           description: 'Countries'
           },
+        max: 4,
         labels: {
           useHTML: true,
           animate: true,
