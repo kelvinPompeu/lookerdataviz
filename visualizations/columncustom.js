@@ -39,7 +39,7 @@ looker.plugins.visualizations.add({
 
     // Função para formatar os dados para Highcharts
     const formatData = (data, ano, isAnoAnterior = false) => {
-      return data.filter(row => row.ano === ano).map(row => ({
+      return data.filter(row => row[anoField].value === ano).map(row => ({
         name: row[paisField].value,
         y: row[num_medalhasField].value,
         color: isAnoAnterior ? 'rgba(158, 159, 163, 0.5)' : countries[row.pais].color
@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
     console.log("formatData", formatData);
 
     // Obter os anos únicos dos dados
-    const anos = [...new Set(data.map(row => row.ano))];
+    const anos = [...new Set(data.map(row => row[anoField].value))];
 
     // Obter o ano atual e o ano anterior
     const anoAtual = Math.max(...anos);
