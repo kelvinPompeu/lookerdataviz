@@ -42,8 +42,8 @@ looker.plugins.visualizations.add({
       return data.filter(row => row[anoField].value === ano).map(row => ({
         name: row[paisField].value,
         y: row[num_medalhasField].value,
-        color: isAnoAnterior ? 'rgba(158, 159, 163, 0.5)' : countries[row.pais].color
-      }));
+        color: isAnoAnterior ? 'rgba(158, 159, 163, 0.5)' : countries[pais] ? countries[pais].color : '#000000' // Verificação de segurança
+        }));
     };
 
     console.log("formatData", formatData);
