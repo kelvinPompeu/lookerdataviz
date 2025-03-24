@@ -5,7 +5,7 @@ view: olimpiadas {
       "ca" AS pais, 2020 AS ano, 9 AS  num_medalhas
     UNION ALL
     SELECT
-      'jp' AS pais, 2020 AS ano, 12 AS  num_medalhas
+      'fr' AS pais, 2020 AS ano, 12 AS  num_medalhas
     UNION ALL
     SELECT
       "au" AS pais, 2020 AS ano, 8 AS  num_medalhas
@@ -29,13 +29,13 @@ view: olimpiadas {
       "ca" AS pais, 2016 AS ano, 13 AS  num_medalhas
     UNION ALL
     SELECT
-      'jp' AS pais, 2016 AS ano, 7 AS  num_medalhas
+      'ja' AS pais, 2016 AS ano, 7 AS  num_medalhas
     UNION ALL
     SELECT
       "au" AS pais, 2016 AS ano, 8 AS  num_medalhas
     UNION ALL
     SELECT
-      'de' AS pais, 2016 AS ano, 11 AS  num_medalhas
+      'fr' AS pais, 2016 AS ano, 11 AS  num_medalhas
     UNION ALL
     SELECT
       'br' AS pais, 2016 AS ano, 20 AS  num_medalhas
