@@ -88,7 +88,7 @@ looker.plugins.visualizations.add({
       },
       xAxis: {
         type: 'category',
-        categories: data.map(row => row[paisField].value),  // Set category names
+        categories: Array.from(new Set(data.map(row => row[paisField].value))), // Set unique category names
         accessibility: {
           description: 'Countries'
           },
