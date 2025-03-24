@@ -114,7 +114,6 @@ looker.plugins.visualizations.add({
         dataLabels: [{ enabled: true, inside: true, style: { fontSize: '16px' } }],
         data: formatData(data, anoAtual)
       }],
-      exporting: { allowHTML: true }
     });
   }
 });
