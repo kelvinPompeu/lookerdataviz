@@ -15,7 +15,7 @@ view: office {
             ;;
   }
   dimension: x {
-    type: string
+    type: number
     sql: ${TABLE}.x ;;
   }
 

@@ -33,12 +33,14 @@ looker.plugins.visualizations.add({
       console.log("row[dimensionFieldY]", row[dimensionFieldY])
       console.log("row[measureField]", row[measureField])
 
-      return {
-        x: row[dimensionFieldX],
-        y: row[dimensionFieldY],
-        value: row[measureField]
-      };
+    const seriesData = data.map(row => {
+      const x = Number(row[dimensionFieldX]) || 0; // Converter para número, usar 0 se nulo
+      const y = Number(row[dimensionFieldY]) || 0;
+      const value = Number(row[measureField]) || 0;
+      return { x: x, y: y, value: value };
     });
+
+    console.log("Looker Data:", JSON.stringify(seriesData)); /
 
    const options = {
       chart: {
