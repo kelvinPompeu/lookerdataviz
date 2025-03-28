@@ -20,6 +20,14 @@ visualization: {
   dependencies: ["https://code.highcharts.com/highcharts.js"]
 }
 
+
+visualization: {
+  id: "heatmap_floorplan"
+  label: "compare 2 dates"
+  file: "visualizations/officemap.js"
+  dependencies: ["https://code.highcharts.com/highcharts.js", "https://code.highcharts.com/modules/heatmap.js"]
+}
+
 application: kitchen {
   label: "pompeu kitchen React/TypeScript extension"
   url: "https://localhost:8080/bundle.js"
