@@ -14,14 +14,14 @@ looker.plugins.visualizations.add({
       return;
     }
 
-    const dimensionFieldX = queryResponse.fields.dimensions[0]; // Dimensão para X (colunas)
-    const dimensionFieldY = queryResponse.fields.dimensions[1]; // Dimensão para Y (linhas)
-    const measureField = queryResponse.fields.measures[0];       // Medida para a intensidade
+    const dimensionFieldX = queryResponse.fields.dimensions.find(f => f.name.includes('x')).name; // Dimensão para X (colunas)
+    const dimensionFieldY = queryResponse.fields.dimensions.find(f => f.name.includes('y')).name; // Dimensão para Y (linhas)
+    const measureField = queryResponse.fields.measures.find(f => f.name.includes('valor')).name;  // Medida para a intensidade
 
     console.log("dimensionFieldX", dimensionFieldX )
     console.log("dimensionFieldY", dimensionFieldY )
     console.log("measureField", measureField)
-    
+
     if (!dimensionFieldX || !dimensionFieldY || !measureField) {
       this.container.innerHTML = "Certifique-se de selecionar uma dimensão para X, uma dimensão para Y e uma medida.";
       return;
@@ -38,7 +38,7 @@ looker.plugins.visualizations.add({
         x: 4,
         y: 2,
         value: 100,
-        
+
       };
     });
 
