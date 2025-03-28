@@ -29,6 +29,10 @@ looker.plugins.visualizations.add({
 
     // Processar os dados do Looker para o formato do Highcharts
     const seriesData = data.map(row => {
+      console.log("row[dimensionFieldX]", row[dimensionFieldX])
+      console.log("row[dimensionFieldY]", row[dimensionFieldY])
+      console.log("row[measureField]", row[measureField])
+
       return {
         x: row[dimensionFieldX],
         y: row[dimensionFieldY],
