@@ -26,6 +26,8 @@ datagroup: tre_to_default_datagroup {
 
 explore: olimpiadas {}
 
+explore: office {}
+
 explore: transactionvsweatherday {}
 
 explore: customviz {}
