@@ -34,9 +34,9 @@ looker.plugins.visualizations.add({
       console.log("row[measureField]", row[measureField])
 
       return {
-        x: row[dimensionFieldX],
-        y: row[dimensionFieldY],
-        value: row[measureField]
+        x: row[dimensionFieldX].value,
+        y: row[dimensionFieldY].value,
+        value: row[measureField].value
       };
     });
 
