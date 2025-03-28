@@ -40,7 +40,7 @@ looker.plugins.visualizations.add({
       return { x: x, y: y, value: value };
     });
 
-    console.log("Looker Data:", JSON.stringify(seriesData)); /
+    console.log("Looker Data:", JSON.stringify(seriesData));
 
    const options = {
       chart: {
