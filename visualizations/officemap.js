@@ -75,8 +75,6 @@ looker.plugins.visualizations.add({
       series: [{
         name: 'Intensidade',
         data: seriesData,
-        borderWidth: 0, // Sem bordas nas células
-        nullColor: 'rgba(0,0,0,0)', // Células sem dados transparentes
         interpolation: true // Sem interpolação entre as células
       }],
       responsive: {
