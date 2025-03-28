@@ -23,7 +23,7 @@ visualization: {
 
 visualization: {
   id: "heatmap_floorplan"
-  label: "compare 2 dates"
+  label: "heatmap_floorplan"
   file: "visualizations/officemap.js"
   dependencies: ["https://code.highcharts.com/highcharts.js", "https://code.highcharts.com/modules/heatmap.js"]
 }
