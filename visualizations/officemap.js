@@ -84,7 +84,7 @@ looker.plugins.visualizations.add({
           },
           chartOptions: {
             chart: {
-              height: 550 // Ajuste conforme necessário
+              height: 200 // Ajuste conforme necessário
             }
           }
         }]
